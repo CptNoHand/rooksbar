@@ -1,5 +1,5 @@
-RegisterServerEvent("qb-burgershot:bill:player")
-AddEventHandler("qb-burgershot:bill:player", function(playerId, amount)
+RegisterServerEvent("qb-rooksbar:bill:player")
+AddEventHandler("qb-rooksbar:bill:player", function(playerId, amount)
         local biller = QBCore.Functions.GetPlayer(source)
         local billed = QBCore.Functions.GetPlayer(tonumber(playerId))
         local amount = tonumber(amount)
@@ -39,59 +39,34 @@ AddEventHandler("qb-burgershot:bill:player", function(playerId, amount)
         end
 end)
 
-QBCore.Functions.CreateCallback('qb-burgershot:server:get:ingredientBurger', function(source, cb)
-    local src = source
-    local Ply = QBCore.Functions.GetPlayer(src)
-    local lettuce = Ply.Functions.GetItemByName("burger-lettuce")
-    local meat = Ply.Functions.GetItemByName("burger-meat")
-    local bun = Ply.Functions.GetItemByName("burger-bun")
-    local tomato = Ply.Functions.GetItemByName("burger-tomato")
-    if lettuce ~= nil and meat ~= nil and bun ~= nil and tomato ~= nil then
-        cb(true)
-    else
-        cb(false)
-    end
-end)
-
-QBCore.Functions.CreateCallback('qb-burgershot:server:get:ingredientTorpedo', function(source, cb)
-    local src = source
-    local Ply = QBCore.Functions.GetPlayer(src)
-    local meat = Ply.Functions.GetItemByName("burger-meat")
-    local bun = Ply.Functions.GetItemByName("burger-bun")
-    if meat ~= nil and bun ~= nil then
-        cb(true)
-    else
-        cb(false)
-    end
-end)
-
-QBCore.Functions.CreateCallback('qb-burgershot:server:get:ingredientMeatfree', function(source, cb)
-    local src = source
-    local Ply = QBCore.Functions.GetPlayer(src)
-    local bun = Ply.Functions.GetItemByName("burger-bun")
-    local tomato = Ply.Functions.GetItemByName("burger-tomato")
-    local lettuce = Ply.Functions.GetItemByName("burger-lettuce")
-    if bun ~= nil and lettuce ~= nil and tomato ~= nil then
-        cb(true)
-    else
-        cb(false)
-    end
-end)
-
-QBCore.Functions.CreateCallback('qb-burgershot:server:get:ingredientMurderMeal', function(source, cb)
-    local src = source
-    local Ply = QBCore.Functions.GetPlayer(src)
-    local fries = Ply.Functions.GetItemByName("burger-fries")
-    local heartstopper = Ply.Functions.GetItemByName("burger-heartstopper")
-    local software = Ply.Functions.GetItemByName("burger-softdrink")
-    if fries ~= nil and heartstopper ~= nil and software ~= nil then
-        cb(true)
-    else
-        cb(false)
-    end
-end)
-
-QBCore.Functions.CreateUseableItem("burger-murdermeal", function(source, item)
+QBCore.Functions.CreateUseableItem("gin-tonic", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
-    TriggerClientEvent("qb-burgershot:MurderMeal", source, item.name)
+    TriggerClientEvent("qb-rooksbar:GinTonic", source, item.name)
 end)
+
+QBCore.Functions.CreateUseableItem("new-western-dry", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+    TriggerClientEvent("qb-rooksbar:NewWesternDry", source, item.name)
+end)
+
+QBCore.Functions.CreateUseableItem("old-tom", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+    TriggerClientEvent("qb-rooksbar:Old-Tom", source, item.name)
+end)
+
+QBCore.Functions.CreateUseableItem("cedar-ridge", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+    TriggerClientEvent("qb-rooksbar:CedarRidge", source, item.name)
+end)
+
+QBCore.Functions.CreateUseableItem("corn", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+    TriggerClientEvent("qb-rooksbar:Corn", source, item.name)
+end)
+
+QBCore.Functions.CreateUseableItem("green-island", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+    TriggerClientEvent("qb-rooksbar:GreenIsland", source, item.name)
+end)
+
+
