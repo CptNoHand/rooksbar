@@ -36,22 +36,23 @@ Citizen.CreateThread(function()
 		distance = 1.0
 	})
 
-		exports['qb-target']:AddBoxZone("drink_tray", vector3(17.0, 6451.81, 31.72), 1.05, 1.0, {
-			name = "drink_tray",
-			heading = 133.0,
-			debugPoly = false,
-			minZ=30.0,
-			maxZ=33.0,
-		}, {
-			options = {
-			    {
-				event = "qb-rooksbar:Tray",
-				icon = "far fa-clipboard",
-				label = "Tray",
-			    },
-			},
-			distance = 1.0
-		})
+	exports['qb-target']:AddBoxZone("rooksdisplay", vector3(16.97, 6454.03, 31.33), 4.6, 1.2, {
+        name="rooksdisplay",
+        heading=310,
+        debugPoly=false,
+        minZ=30.0,
+        maxZ=33.0,
+    }, {
+            options = {
+                {
+                    event = "qb-rooksbar:Lager",
+                    icon = "fas fa-box",
+                    label = "Storage",
+                    job = "rooksbar",
+                },
+            },
+            distance = 1.0
+        })
 
 	exports['qb-target']:AddBoxZone("rooksdrinks", vector3(16.13, 6452.57, 31.33), 2.2, 0.6, {
 	    name="rooksdrinks",
@@ -102,24 +103,6 @@ Citizen.CreateThread(function()
                         event = "nh-context:RooksFridge",
                         icon = "fas fa-laptop",
                         label = "Order Ingredients!",
-                        job = "rooksbar",
-                    },
-                },
-                distance = 1.0
-            })
-
-        exports['qb-target']:AddBoxZone("rooksdisplay", vector3(16.97, 6454.03, 31.33), 4.6, 1.2, {
-            name="rooksdisplay",
-            heading=310,
-            debugPoly=false,
-            minZ=30.0,
-            maxZ=33.0,
-        }, {
-                options = {
-                    {
-                        event = "qb-rooksbar:Lager",
-                        icon = "fas fa-box",
-                        label = "Storage",
                         job = "rooksbar",
                     },
                 },

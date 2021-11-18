@@ -1,11 +1,11 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-RegisterServerEvent("qb-rooksbar:invoicel:player")
+RegisterServerEvent("qb-rooksbar:invoice:player")
 AddEventHandler("qb-rooksbar:invoice:player", function(playerId, amount)
         local biller = QBCore.Functions.GetPlayer(source)
         local billed = QBCore.Functions.GetPlayer(tonumber(playerId))
         local amount = tonumber(amount)
-        if biller.PlayerData.job.name == nil then
+        if biller.PlayerData.job.name == "rooksbar" then
             if billed ~= nil then
                 if biller.PlayerData.citizenid ~= billed.PlayerData.citizenid then
                     if amount and amount > 0 then
