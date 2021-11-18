@@ -2,12 +2,12 @@
 -- target
 
 Citizen.CreateThread(function()
-	exports['qb-target']:AddBoxZone("RooksBarDuty", vector3(-1193.95, -898.65, 14.0), 1, 1.2, {
+	exports['qb-target']:AddBoxZone("RooksBarDuty", vector3(20.03, 6449.8, 31.26), 1, 1.2, {
 		name = "RooksBarDuty",
-		heading = 32,
+		heading = 227,
 		debugPoly = false,
-		minZ=14.0,
-		maxZ=18.0,
+		minZ=30.0,
+		maxZ=33.0,
 	}, {
 		options = {
 		    {  
@@ -20,29 +20,29 @@ Citizen.CreateThread(function()
 		distance = 1.5
 	})
 
-		exports['qb-target']:AddBoxZone("burger_tray_", vector3(-1195.29, -892.31, 14.0), 1.05, 1.0, {
-			name = "burger_tray_1",
-			heading = 35.0,
+		exports['qb-target']:AddBoxZone("drink_tray", vector3(17.0, 6451.81, 31.72), 1.05, 1.0, {
+			name = "drink_tray",
+			heading = 133.0,
 			debugPoly = false,
-			minZ=13.8,
-			maxZ=14.3,
+			minZ=30.0,
+			maxZ=33.0,
 		}, {
 			options = {
 			    {
-				event = "qb-rooksbar:Tray1",
+				event = "qb-rooksbar:Tray",
 				icon = "far fa-clipboard",
-				label = "Tray 1",
+				label = "Tray",
 			    },
 			},
 			distance = 1.5
 		})
 
-	exports['qb-target']:AddBoxZone("rooksdrinks", vector3(-1199.54, -895.52, 14.0), 2.2, 0.6, {
+	exports['qb-target']:AddBoxZone("rooksdrinks", vector3(16.13, 6452.57, 31.33), 2.2, 0.6, {
 	    name="rooksdrinks",
-	    heading=34,
+	    heading=131,
 	    debugPoly=false,
-	    minZ=13.8,
-	    maxZ=14.8,
+	    minZ=30.0,
+	    maxZ=33.0,
 	    }, {
 		options = {
 		    {
@@ -55,12 +55,12 @@ Citizen.CreateThread(function()
 		distance = 1.5
 	    })
 
-        exports['qb-target']:AddBoxZone("rooksdrinks2", vector3(-1189.08, -905.28, 14.0), 1.15, 0.7, {
+        exports['qb-target']:AddBoxZone("rooksdrinks2", vector3(18.24, 6450.63, 31.71), 1.15, 0.7, {
             name="rooksdrinks2",
-            heading=33,
+            heading=131,
             debugPoly=false,
-            minZ=13.8,
-            maxZ=14.8,
+            minZ=30.0,
+            maxZ=33.0,
             }, {
                 options = {
                     {
@@ -74,12 +74,12 @@ Citizen.CreateThread(function()
             })
 
 
-         exports['qb-target']:AddBoxZone("fridge", vector3(-1203.71, -895.86, 14.0), 1.6, 1, {
+         exports['qb-target']:AddBoxZone("fridge", vector3(13.86, 6455.47, 31.5), 1.6, 1, {
             name="fridge",
-            heading=35,
+            heading=317,
             debugPoly=false,
-            minZ=13.0,
-            maxZ=15.6,
+            minZ=30.0,
+            maxZ=33.0,
         }, {
                 options = {
                     {
@@ -92,12 +92,12 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
-        exports['qb-target']:AddBoxZone("rooksdisplay", vector3(-1197.78, -894.45, 14.0), 4.6, 1.2, {
+        exports['qb-target']:AddBoxZone("rooksdisplay", vector3(16.97, 6454.03, 31.33), 4.6, 1.2, {
             name="rooksdisplay",
-            heading=34,
+            heading=310,
             debugPoly=false,
-            minZ=13.0,
-            maxZ=14.8,
+            minZ=30.0,
+            maxZ=33.0,
         }, {
                 options = {
                     {
@@ -110,12 +110,12 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
-        exports['qb-target']:AddBoxZone("RooksBar_register_1", vector3(-1196.01, -891.34, 14.0), 0.5, 0.4, {
-            name="RooksBar_register_1",
+        exports['qb-target']:AddBoxZone("RooksBar_register", vector3(18.15, 6452.92, 31.41), 0.5, 0.4, {
+            name="RooksBar_register",
             debugPoly=false,
-            heading=125,
-            minZ=14.0,
-            maxZ=14.5,
+            heading=312,
+            minZ=31.0,
+            maxZ=33.0,
         }, {
                 options = {
                     {

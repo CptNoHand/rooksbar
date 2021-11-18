@@ -11,42 +11,42 @@ Rewritten
 QBCore.Functions.CreateUseableItem("gin-tonic", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
 	if Player.Functions.RemoveItem(item.name, 1, item.slot) then
-        TriggerClientEvent("consumables:client:Drink", source, item.name)
+        TriggerClientEvent("consumables:client:DrinkAlcohol", source, item.name)
     end
 end)
 
 QBCore.Functions.CreateUseableItem("new-western-dry", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
 	if Player.Functions.RemoveItem(item.name, 1, item.slot) then
-        TriggerClientEvent("consumables:client:Drink", source, item.name)
+        TriggerClientEvent("consumables:client:DrinkAlcohol", source, item.name)
     end
 end)
 
 QBCore.Functions.CreateUseableItem("old-tom", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
 	if Player.Functions.RemoveItem(item.name, 1, item.slot) then
-        TriggerClientEvent("consumables:client:Drink", source, item.name)
+        TriggerClientEvent("consumables:client:DrinkAlcohol", source, item.name)
     end
 end)
 
 QBCore.Functions.CreateUseableItem("cedar-ridge", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
 	if Player.Functions.RemoveItem(item.name, 1, item.slot) then
-        TriggerClientEvent("consumables:client:Drink", source, item.name)
+        TriggerClientEvent("consumables:client:DrinkAlcohol", source, item.name)
     end
 end)
 
 QBCore.Functions.CreateUseableItem("corn", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
 	if Player.Functions.RemoveItem(item.name, 1, item.slot) then
-        TriggerClientEvent("consumables:client:Drink", source, item.name)
+        TriggerClientEvent("consumables:client:DrinkAlcohol", source, item.name)
     end
 end)
 
 QBCore.Functions.CreateUseableItem("green-island", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
 	if Player.Functions.RemoveItem(item.name, 1, item.slot) then
-        TriggerClientEvent("consumables:client:Drink", source, item.name)
+        TriggerClientEvent("consumables:client:DrinkAlcohol", source, item.name)
     end
 end)
 ```
@@ -118,5 +118,5 @@ QBShared.Jobs = {
 
 ## Insert into @qb-bossmenu - config.lua
 ```
-['rooksbar'] = vector3(-1192.04, -902.476, 13.998),
+['rooksbar'] = vector3(10.31, 6468.25, 31.55),
 ```
