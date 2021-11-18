@@ -1,38 +1,7 @@
+Rewritten
 # A Burgershot for QBCore Framework
 
-Preview *outdated* : https://www.youtube.com/watch?v=9sLa6d6hUXY&t=42s
 
-
-## Please note
-
-- I have added an option for people not using qb-target replace the menus.lua file with the menus-notarget.lua file and uncomment lines in the config folder.
-
-- Please make sure u use the latest dependencies aswell as core for this in order to work.
-
-- This Job has been tested on the latest build as of 19/08/2021.
-
-
-## Dependencies :
-
-QBCore Framework - https://github.com/qbcore-framework/qb-core
-
-PolyZone - https://github.com/mkafrin/PolyZone
-
-qb-target - https://github.com/BerkieBb/qb-target (Only needed if not using draw text)
-
-nh-context - ~~https://github.com/nerohiro/nh-context (owner removed script)~~ See folder [NH] for scripts
-
-nh-keyboard - ~~https://github.com/nerohiro/nh-keyboard (owner removed script)~~ See folder [NH] for scripts
-
-
-## Credits : 
-
-- Nero that allowed us to use his scripts.
-- BerkieB for his qb-target.
-
-## Soon To Come
-
-- Lucky tickets that gives a player certain amount of money or reward. 
 
 ## Insert into @qb-smallresources --> server --> consumables.lua
 ```
