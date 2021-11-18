@@ -1,3 +1,5 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+PlayerData = {}
 isLoggedIn = true
 
 local onDuty = false
@@ -17,7 +19,6 @@ function DrawText3Ds(x, y, z, text)
     ClearDrawOrigin()
 end
 
-
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
 	if PlayerData.job.onduty then
@@ -35,24 +36,24 @@ AddEventHandler('QBCore:Client:SetDuty', function(duty)
 end)
 
 Citizen.CreateThread(function()
-    BurgerShot = AddBlipForCoord(-1197.32, -897.655, 13.995)
-    SetBlipSprite (BurgerShot, 106)
-    SetBlipDisplay(BurgerShot, 4)
-    SetBlipScale  (BurgerShot, 0.5)
-    SetBlipAsShortRange(BurgerShot, true)
-    SetBlipColour(BurgerShot, 75)
+    RooksBar = AddBlipForCoord(17.15, 6452.53, 31.55)
+    SetBlipSprite (RooksBar, 310)
+    SetBlipDisplay(RooksBar, 4)
+    SetBlipScale  (RooksBar, 0.75)
+    SetBlipAsShortRange(RooksBar, true)
+    SetBlipColour(RooksBar, 2)
     BeginTextCommandSetBlipName("STRING")
     AddTextComponentSubstringPlayerName("Rooks Bar")
-    EndTextCommandSetBlipName(BurgerShot)
+    EndTextCommandSetBlipName(RooksBar)
 end) 
 
-RegisterNetEvent("qb-rooksbar:DutyB")
-AddEventHandler("qb-rooksbar:DutyB", function()
+RegisterNetEvent("qb-rooksbar:Duty")
+AddEventHandler("qb-rooksbar:Duty", function()
     TriggerServerEvent("QBCore:ToggleDuty")
 end)
 
-RegisterNetEvent("qb-rooksbar:Tray")
-AddEventHandler("qb-rooksbar:Tray", function()
+RegisterNetEvent("qb-rooksbar:Alc")
+AddEventHandler("qb-rooksbar:Alc", function()
     TriggerEvent("inventory:client:SetCurrentStash", "alctray")
     TriggerServerEvent("inventory:server:OpenInventory", "stash", "alctray", {
         maxweight = 10000,
@@ -60,8 +61,8 @@ AddEventHandler("qb-rooksbar:Tray", function()
     })
 end)
 
-RegisterNetEvent("qb-rooksbar:Storage")
-AddEventHandler("qb-rooksbar:Storage", function()
+RegisterNetEvent("qb-rooksbar:Lager")
+AddEventHandler("qb-rooksbar:Lager", function()
     TriggerEvent("inventory:client:SetCurrentStash", "alcstorage")
     TriggerServerEvent("inventory:server:OpenInventory", "stash", "alcstorage", {
         maxweight = 250000,
@@ -78,7 +79,7 @@ AddEventHandler("qb-rooksbar:GinTonic", function()
         else
             QBCore.Functions.Notify("You don't have any gin..", "error")
         end
-      end, 'gin-tonic')
+      end, 'gin')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -93,7 +94,7 @@ AddEventHandler("qb-rooksbar:NewWesternDry", function()
         else
             QBCore.Functions.Notify("You don't have any gin..", "error")
         end
-      end, 'new-western-dry')
+      end, 'gin')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -108,7 +109,7 @@ AddEventHandler("qb-rooksbar:OldTom", function()
         else
             QBCore.Functions.Notify("You don't have any gin..", "error")
         end
-      end, 'old-tom')
+      end, 'gin')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -123,7 +124,7 @@ AddEventHandler("qb-rooksbar:CedarRidge", function()
         else
             QBCore.Functions.Notify("You don't have any gin..", "error")
         end
-      end, 'cedar-ridge')
+      end, 'gin')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -138,7 +139,7 @@ AddEventHandler("qb-rooksbar:Corn", function()
         else
             QBCore.Functions.Notify("You don't have any whiskey..", "error")
         end
-      end, 'corn')
+      end, 'whiskey')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end
@@ -153,7 +154,7 @@ AddEventHandler("qb-rooksbar:GreenIsland", function()
         else
             QBCore.Functions.Notify("You don't have any rum..", "error")
         end
-      end, 'green-island')
+      end, 'rum')
     else
         QBCore.Functions.Notify("You must be Clocked into work", "error")
     end

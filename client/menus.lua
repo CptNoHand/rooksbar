@@ -1,3 +1,19 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
+AddEventHandler('QBCore:Client:OnPlayerLoaded', function(Player)
+    	PlayerData =  QBCore.Functions.GetPlayerData()
+end)
+
+RegisterNetEvent('QBCore:Client:OnJobUpdate')
+AddEventHandler('QBCore:Client:OnJobUpdate', function(job)
+     	PlayerData.job = job
+end)
+
+RegisterNetEvent('QBCore:Player:SetPlayerData')
+AddEventHandler('QBCore:Player:SetPlayerData', function(val)
+	PlayerData = val
+end)
 
 -- target
 
@@ -11,13 +27,13 @@ Citizen.CreateThread(function()
 	}, {
 		options = {
 		    {  
-			event = "qb-rooksbar:DutyB",
+			event = "qb-rooksbar:Duty",
 			icon = "far fa-clipboard",
 			label = "Clock On/Off",
 			job = "rooksbar",
 		    },
 		},
-		distance = 1.5
+		distance = 1.0
 	})
 
 		exports['qb-target']:AddBoxZone("drink_tray", vector3(17.0, 6451.81, 31.72), 1.05, 1.0, {
@@ -34,7 +50,7 @@ Citizen.CreateThread(function()
 				label = "Tray",
 			    },
 			},
-			distance = 1.5
+			distance = 1.0
 		})
 
 	exports['qb-target']:AddBoxZone("rooksdrinks", vector3(16.13, 6452.57, 31.33), 2.2, 0.6, {
@@ -46,13 +62,13 @@ Citizen.CreateThread(function()
 	    }, {
 		options = {
 		    {
-			event = "nh-context:DrinkMenu",
+			event = "nh-context:RooksMenu",
 			icon = "fas fa-filter",
 			label = "Make Some Drinks",
 			job = "rooksbar",
 		    },
 		},
-		distance = 1.5
+		distance = 1.0
 	    })
 
         exports['qb-target']:AddBoxZone("rooksdrinks2", vector3(18.24, 6450.63, 31.71), 1.15, 0.7, {
@@ -64,13 +80,13 @@ Citizen.CreateThread(function()
             }, {
                 options = {
                     {
-                        event = "nh-context:DrinkMenu",
+                        event = "nh-context:RooksMenu",
                         icon = "fas fa-filter",
                         label = "Make Some Drinks",
                         job = "rooksbar",
                     },
                 },
-                distance = 1.5
+                distance = 1.0
             })
 
 
@@ -83,13 +99,13 @@ Citizen.CreateThread(function()
         }, {
                 options = {
                     {
-                        event = "nh-context:OrderMenu",
+                        event = "nh-context:RooksFridge",
                         icon = "fas fa-laptop",
                         label = "Order Ingredients!",
                         job = "rooksbar",
                     },
                 },
-                distance = 1.5
+                distance = 1.0
             })
 
         exports['qb-target']:AddBoxZone("rooksdisplay", vector3(16.97, 6454.03, 31.33), 4.6, 1.2, {
@@ -101,16 +117,16 @@ Citizen.CreateThread(function()
         }, {
                 options = {
                     {
-                        event = "qb-rooksbar:Storage",
+                        event = "qb-rooksbar:Lager",
                         icon = "fas fa-box",
                         label = "Storage",
                         job = "rooksbar",
                     },
                 },
-                distance = 1.5
+                distance = 1.0
             })
 
-        exports['qb-target']:AddBoxZone("RooksBar_register", vector3(18.15, 6452.92, 31.41), 0.5, 0.4, {
+        exports['qb-target']:AddBoxZone("RooksBar_register", vector3(18.15, 6452.92, 31.41), 1.0, 0.4, {
             name="RooksBar_register",
             debugPoly=false,
             heading=312,
@@ -119,21 +135,21 @@ Citizen.CreateThread(function()
         }, {
                 options = {
                     {
-                        event = "qb-rooksbar:bill",
+                        event = "qb-rooksbar:invoice",
                         parms = "1",
                         icon = "fas fa-credit-card",
                         label = "Charge Customer",
                         job = "rooksbar",
                     },
                 },
-                distance = 1.5
+                distance = 1.0
             })
 end)
 
 
 -- NH - Context --
 
-RegisterNetEvent('nh-context:DrinkMenu', function(data)
+RegisterNetEvent('nh-context:RooksMenu', function(data)
     TriggerEvent('nh-context:sendMenu', {
         {
             id = 0,
@@ -197,7 +213,7 @@ RegisterNetEvent('nh-context:DrinkMenu', function(data)
 end)
 
 
-RegisterNetEvent('nh-context:OrderMenu', function(data)
+RegisterNetEvent('nh-context:RooksFridge', function(data)
     TriggerEvent('nh-context:sendMenu', {
         {
             id = 0,
@@ -217,7 +233,7 @@ RegisterNetEvent('nh-context:OrderMenu', function(data)
             header = "• Open Fridge",
             txt = "See what you have in storage",
             params = {
-                event = "qb-rooksbar:Storage2"
+                event = "qb-rooksbar:Lager"
             }
         },
         {
@@ -229,8 +245,8 @@ RegisterNetEvent('nh-context:OrderMenu', function(data)
 end)
 
 -- Bill Stuff --
-RegisterNetEvent("qb-rooksbar:bill")
-AddEventHandler("qb-rooksbar:bill", function()
+RegisterNetEvent("qb-rooksbar:invoice")
+AddEventHandler("qb-rooksbar:invoice", function()
     local bill = exports["nh-keyboard"]:KeyboardInput({
         header = "Create Receipt",
         rows = {
@@ -248,7 +264,7 @@ AddEventHandler("qb-rooksbar:bill", function()
         if bill[1].input == nil or bill[2].input == nil then 
             return 
         end
-        TriggerServerEvent("qb-rooksbar:bill:player", bill[1].input, bill[2].input)
+        TriggerServerEvent("qb-rooksbar:invoice:player", bill[1].input, bill[2].input)
     end
 end)
 

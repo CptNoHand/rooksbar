@@ -1,5 +1,7 @@
-RegisterServerEvent("qb-rooksbar:bill:player")
-AddEventHandler("qb-rooksbar:bill:player", function(playerId, amount)
+local QBCore = exports['qb-core']:GetCoreObject()
+
+RegisterServerEvent("qb-rooksbar:invoicel:player")
+AddEventHandler("qb-rooksbar:invoice:player", function(playerId, amount)
         local biller = QBCore.Functions.GetPlayer(source)
         local billed = QBCore.Functions.GetPlayer(tonumber(playerId))
         local amount = tonumber(amount)
@@ -38,35 +40,3 @@ AddEventHandler("qb-rooksbar:bill:player", function(playerId, amount)
             TriggerClientEvent('QBCore:Notify', source, 'No Access', 'error')
         end
 end)
-
-QBCore.Functions.CreateUseableItem("gin-tonic", function(source, item)
-    local Player = QBCore.Functions.GetPlayer(source)
-    TriggerClientEvent("qb-rooksbar:GinTonic", source, item.name)
-end)
-
-QBCore.Functions.CreateUseableItem("new-western-dry", function(source, item)
-    local Player = QBCore.Functions.GetPlayer(source)
-    TriggerClientEvent("qb-rooksbar:NewWesternDry", source, item.name)
-end)
-
-QBCore.Functions.CreateUseableItem("old-tom", function(source, item)
-    local Player = QBCore.Functions.GetPlayer(source)
-    TriggerClientEvent("qb-rooksbar:Old-Tom", source, item.name)
-end)
-
-QBCore.Functions.CreateUseableItem("cedar-ridge", function(source, item)
-    local Player = QBCore.Functions.GetPlayer(source)
-    TriggerClientEvent("qb-rooksbar:CedarRidge", source, item.name)
-end)
-
-QBCore.Functions.CreateUseableItem("corn", function(source, item)
-    local Player = QBCore.Functions.GetPlayer(source)
-    TriggerClientEvent("qb-rooksbar:Corn", source, item.name)
-end)
-
-QBCore.Functions.CreateUseableItem("green-island", function(source, item)
-    local Player = QBCore.Functions.GetPlayer(source)
-    TriggerClientEvent("qb-rooksbar:GreenIsland", source, item.name)
-end)
-
-
