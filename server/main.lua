@@ -40,3 +40,8 @@ AddEventHandler("qb-rooksbar:invoice:player", function(playerId, amount)
             TriggerClientEvent('QBCore:Notify', source, 'No Access', 'error')
         end
 end)
+
+QBCore.Commands.Add("rechnung", "Stell eine Rechnung aus", {}, false, function(source, args)
+    local src = source
+    TriggerClientEvent("rooksbar:invoice:player", src)
+end)

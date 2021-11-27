@@ -259,3 +259,5 @@ RegisterNetEvent("qb-rooksbar:shop")
 AddEventHandler("qb-rooksbar:shop", function()
     TriggerServerEvent("inventory:server:OpenInventory", "shop", "rooksbar", Config.Items)
 end)
+
+RegisterKeyMapping('rechnung', 'Rechnung austellen', 'keyboard', 'k')
